@@ -222,8 +222,13 @@
   .u-section-1 .u-text-3 {
     margin-right: 42px;
   }
-}.u-section-2 .u-sheet-1 {
-  min-height: 450px;
+}
+
+
+
+
+.u-section-2 .u-sheet-1 {
+  min-height: 100px;
 }
 
 .u-section-2 .u-text-1 {
@@ -242,4 +247,11 @@
   .u-section-2 .u-line-1 {
     height: 10px;
   }
+}
+
+
+#calendar {
+  width: 80%; /* Or max-width: 960px; for a fixed maximum width */
+  margin: 0 auto;
+  padding: 50px; /* Optional: Add internal padding for content spacing */
 }
