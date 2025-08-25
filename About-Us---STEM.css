@@ -1,3 +1,38 @@
+/* Sidebar link hover: bold and pop up */
+.u-sidenav .u-nav-link {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.u-sidenav .u-nav-link:hover {
+  font-weight: bold !important;
+  transform: scale(1.08) !important;
+  z-index: 2;
+}
+@media (max-width: 991px) {
+  .u-sidenav .u-nav-item {
+    margin: 18px 0 !important;
+  }
+  .u-sidenav .u-nav-link {
+    padding: 16px 24px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-sidenav .u-nav-item {
+    margin: 20px 0 !important;
+  }
+  .u-sidenav .u-nav-link {
+    padding: 20px 20px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-sidenav .u-nav-item {
+    margin: 22px 0 !important;
+  }
+  .u-sidenav .u-nav-link {
+    padding: 22px 18px !important;
+  }
+}
  .u-section-1 {
   background-image: none;
   min-height: 714px;
@@ -705,26 +740,223 @@
   }
 }
 
+/* Hide footer on mobile screens */
 @media (max-width: 767px) {
-  .u-section-4 .u-text-1 {
-    margin-top: 495px;
+  footer,
+  .u-footer {
+    display: none !important;
   }
+}
 
-  .u-section-4 .u-text-2 {
-    margin-bottom: -303px;
+/* Improved responsive sidebar/navigation */
+@media (max-width: 991px) {
+  /* Make hamburger menu more responsive and cleaner */
+  .u-sidenav {
+    width: 280px !important;
+    max-width: 85vw !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 0 8px 8px 0 !important;
+  }
+  
+  .u-sidenav .u-nav {
+    padding: 20px 0 !important;
+  }
+  
+  .u-sidenav .u-nav-item {
+    margin: 18px 0 !important;
+  }
+  
+  .u-sidenav .u-nav-link {
+    padding: 16px 24px !important;
+    font-size: 16px !important;
+    transition: all 0.3s ease !important;
+    border-radius: 0 25px 25px 0 !important;
+    margin-right: 20px !important;
+  }
+  
+  .u-sidenav .u-nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    transform: translateX(5px) !important;
+  }
+  
+  /* Better menu overlay */
+  .u-menu-overlay {
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+  }
+  
+  /* Cleaner hamburger icon */
+  .u-hamburger-link {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .u-hamburger-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    transform: scale(1.05) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile-specific sidebar improvements */
+  .u-sidenav {
+    width: 260px !important;
+    max-width: 80vw !important;
+  }
+  
+  .u-sidenav .u-nav-link {
+    padding: 14px 20px !important;
+    font-size: 18px !important;
+  }
+  
+  /* Better touch targets for mobile */
+  .u-hamburger-link {
+    width: 48px !important;
+    height: 48px !important;
+    margin: 8px !important;
   }
 }
 
 @media (max-width: 575px) {
-  .u-section-4 .u-sheet-1 {
-    min-height: 875px;
+  /* Extra small screens */
+  .u-sidenav {
+    width: 240px !important;
+    max-width: 75vw !important;
   }
-
-  .u-section-4 .u-text-1 {
-    margin-top: 586px;
+  
+  .u-sidenav .u-nav-link {
+    padding: 16px 18px !important;
+    font-size: 16px !important;
   }
+}
 
+
+
+/* Fix overlapping content issues on all screen sizes */
+/* Override negative margins that cause content to overlap footer */
+@media (max-width: 991px) {
+  .u-text-2 {
+    margin-bottom: 20px !important;
+  }
+  
+  .u-section-3 .u-text-2,
   .u-section-4 .u-text-2 {
-    margin-bottom: -465px;
+    margin-bottom: 30px !important;
+  }
+}
+
+/* Additional spacing for mobile to ensure footer separation */
+@media (max-width: 767px) {
+  /* Add bottom margin to the last section before footer */
+  section:last-of-type:not(.u-backlink):not(footer) {
+    margin-bottom: 40px !important;
+  }
+
+
+  
+  /* Ensure footer has clear space */
+  footer.u-footer {
+    margin-top: 20px !important;
+    clear: both;
+  }
+}
+
+/* New Custom Footer Styles */
+.custom-footer {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #ffffff;
+  margin-top: 50px;
+  padding: 40px 0 20px;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.footer-section h3 {
+  color: #00d4ff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.footer-section h4 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-section p {
+  color: #b8b8b8;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #b8b8b8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #00d4ff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: center;
+  color: #888;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .custom-footer {
+    padding: 30px 0 15px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Remove old footer styles on mobile */
+@media (max-width: 767px) {
+  footer.u-footer,
+  .u-footer {
+    display: none !important;
   }
 }
